@@ -1,0 +1,257 @@
+.event-tabs {
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.tabs {
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  gap: 10px;
+}
+
+.tab {
+  background-color:lightgoldenrodyellow;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: none;
+  border: none;
+  padding: 10px;
+  color: black;
+  border-radius: 20px;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.tab.active {
+  font-size: 18px;
+  transition: all ease-in;
+  font-weight: bold;
+  border: none;
+}
+
+.image-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 45px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.image-container img {
+  width: 25% ;
+  height: fit-content;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: all ease-in;
+}
+  
+@media screen and (max-width: 768px) {
+ .event-tabs .image-container{
+  flex-direction: column;
+ }
+
+.image-container img{
+  width: 50%;
+}
+  
+}
+
+@media screen and (max-width: 320px) {
+ .event-tabs .image-container{
+  flex-direction: row;
+ }
+
+.image-container div{
+  width: 50%;
+  height: 20% !importtant;
+  display: flex;
+  flex-direction: row !importtant;
+  
+}
+
+.event-tabs {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.event-tabs .tabs{
+  flex-direction: row;
+}
+  
+}
+
+/* .tabs {
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  gap: 10px;
+} */
+
+.tab {
+  background-color: lightgoldenrodyellow;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: none;
+  border: none;
+  padding: 10px;
+  color: black;
+  border-radius: 20px;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.tab.active {
+  font-size: 18px;
+  transition: all ease-in;
+  font-weight: bold;
+  border: none;
+}
+
+.image-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 45px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.image-container img {
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: all ease-in;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .event-tabs {
+    padding: 15px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .image-container {
+    flex-direction: column;
+  }
+
+  .image-container img {
+    width: 50%;
+  }
+
+  .event-tabs{
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .event-tabs {
+    padding: 10px;
+  }
+
+  .tabs {
+    gap: 5px;
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .image-container {
+    flex-direction: row;
+  }
+
+  .image-container img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .event-tabs {
+    padding: 5px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tab {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .image-container {
+    flex-direction: row;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .image-container div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* High-Resolution Android and iPhone Tweaks */
+@media screen and (min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+  .image-container img {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .tabs {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .image-container img {
+    width: 70%;
+  }
+}
+
+
+

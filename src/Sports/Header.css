@@ -1,0 +1,300 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+  color:white;
+  font-family: 'Graduate', sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: #010101;
+    color: #eee;
+}
+svg{
+    width: 25px;
+}
+header{
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50px 2fr 50px;
+    grid-template-rows: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    
+}
+header .logo{
+    font-weight: bold;
+}
+header .menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+.menu li a {
+    text-decoration: none;
+    color: inherit;
+}
+/* css slider */
+.slider{
+    height: 100vh;
+    width: 100vw;
+    margin-top: -100px;
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 5%, transparent
+    );
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 100px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+
+.arrows .prev{
+left: 30px;
+top: 40%;
+z-index: 100;
+position: absolute;
+}
+
+.arrows .next{
+    right: 0;
+    top: 40%;
+    right: 30px;
+    z-index: 100;
+    position: absolute;
+    
+}
+
+
+.arrows button{
+    background-color:transparent;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+.Trophy {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for element's dimensions */
+    z-index: 10; /* Ensure it stays on top of other elements */
+  }
+  
+  .Trophy img {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    opacity: 60%;
+    user-select: none;
+    pointer-events: none;
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    margin-bottom: 50px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+  
+  .dot.active {
+    background-color: #717171;
+  }
+  
+  .dot:hover {
+    background-color: #555;
+  }
+  
+
+
+
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
+    }
+
+    .slider{
+        width: 100%;
+    }
+
+    .headingCenter{
+        font-size: 0.9em;
+        padding: 15px;
+    }
+}
+
+/* General Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2000; /* Ensure it stays above most elements */
+  }
+  
+  /* Hamburger Icon */
+  .hamburger1 {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: relative; /* Ensures it's positioned correctly within the header */
+    z-index: 3000; /* Ensure it's above the menu */
+  }
+  
+  .hamburger1 .line {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    -webkit-transition: transform 0.3s ease, opacity 0.3s ease;
+    -moz-transition: transform 0.3s ease, opacity 0.3s ease;
+    -ms-transition: transform 0.3s ease, opacity 0.3s ease;
+    -o-transition: transform 0.3s ease, opacity 0.3s ease;
+}
+  
+  /* Hamburger Animation */
+  .hamburger1.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger1.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger1.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Full-Screen Sliding Menu */
+  .menu1 {
+    position: fixed; /* Ensures it covers the entire screen */
+    top: 0;
+    left: 100%; /* Initially hidden off-screen */
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 2500; /* Higher than most content, but below the hamburger icon */
+    transition: left 0.5s ease;
+  }
+  
+  .menu1 li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+  }
+  
+  .menu1.open {
+    left: 0; /* Slide in the menu when open */
+  }
+  
+  /* Hide Scrollbars */
+  body {
+    overflow-x: hidden;
+  }
+  
+  #home{
+    margin-top: -59px;
+  }
+
+
+

@@ -1,0 +1,67 @@
+/* Example in CSS */
+@font-face {
+  font-family: 'Lovelo';
+  src: url('/assets/fonts/lovelo-regular.woff2') format('woff2'),
+       url('/assets/fonts/lovelo-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Lovelo', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.sports{
+
+}
+
+
+/* Nav & Hero */
+/* Nav & Hero */
+
+/* SportsCard.css */
+.events{
+  border: none;
+}
+
+  
+
+/* Gallery */
+/* ImageGallery.css */
+.Gallery{
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 45px;
+  
+}
+
+/* Container for both galleries side by side */
+.image-gallery-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Gallery 1: Infinite Scroll Up */
+
+
+
+/* Gallery Container */
+
+
+/* Gallery */
+
+
+.background{
+  background: url("https://res.cloudinary.com/dyhby7bo9/image/upload/v1735138975/eccwwtgxg6jyr6btfibf.png");
+  background-size: cover;
+}

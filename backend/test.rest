@@ -1,0 +1,13 @@
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+    "moodle_id": "22107021",
+    "password": "YASH@22107021"
+}
+
+###
+
+
+GET http://127.0.0.1:8000/api/get 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjczMDkxLCJpYXQiOjE3NDA1ODY2OTEsImp0aSI6IjdmZWIwOGQ4ODdkZTQ0ZGZiZjNkNzVlMGEwMWY4OTZmIiwidXNlcl9pZCI6OTM1fQ.NkEhyFVRonM3sT6lFhrZ4_BYlpxh_Y23SBTAAQ2asIg

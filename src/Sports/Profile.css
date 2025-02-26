@@ -1,0 +1,42 @@
+/* Container for the dropdown */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Profile icon */
+  .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 50px;  /* Adjust for desired spacing */
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 100;
+  }
+  
+  .dropdown-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown-menu ul li {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu ul li:hover {
+    background-color: #444;
+  }
+  

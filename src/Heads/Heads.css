@@ -1,0 +1,230 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+  .takeline {
+    width: 100%;
+    margin-bottom: 20px; /* Adjust this value as needed */
+    display: block;
+
+}
+
+
+#nav{
+    width:100%;
+    top: 0;
+    height: fit-content;
+    background-position:calc(top+10%);
+    background-size: cover;
+    z-index: 999;
+}
+#nav img{
+    height: 70px;
+    padding-left: 30px;
+    margin-top: 0px;
+    display: flex;
+}
+#nav center{
+    color: white;
+}
+
+#nav h2 {
+    margin-top: 70px;
+    transition: color 0.3s ease;
+}
+
+#nav h2.active {
+    color: red;
+}
+
+#nav center h2{
+    font-size: 3rem;
+    text-align: center;
+    align-items: center;
+    
+}
+
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 5%;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+#title{
+    font-size: 180px;
+    color: oldlace;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#team{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 85vh;
+    gap: 2rem;
+    margin: auto;
+}
+.team-heading h3{
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+
+center h2{
+    background: transparent;
+    font-weight: 400;
+    font-size: 6em!important;
+}
+
+.team-box{
+
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    user-select: none;
+    border: 5px solid linear-gradient(0deg, rgba(231,228,220,1) 19%, rgba(147,131,143,1) 77%);;   
+}
+
+.t-b-img{
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.t-b-img::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgb(0, 0, 0) 100%);
+}
+
+.t-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.t-b-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t-b-text strong{
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.t-b-text span{
+    color: #919191;
+    font-size: 0.9rem;
+}
+
+.team-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    
+}
+
+.team-social a{
+    margin-top: 5px;
+    color: white;
+    font-size: 0.9rem;
+    transition: all ease 0.3s;
+}
+.team-social a:hover{
+    color:#c03275 ;
+}
+
+
+.scrollTop{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    border-radius: 1px solid #fff;
+    cursor: pointer
+    transition all 0.5s ease 0s;
+}
+
+.scrollTop:hover{
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.madeWithLove {
+    background: #000;
+    color: #707070;
+    text-align: center;
+    padding-top:20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 10px;
+}
+.madeWithLove h5 a {
+    font-weight: 800;
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 760px){
+    #nav{
+        background-position: top;
+    }
+
+    #nav center h2{
+        font-size: 1.8rem!important;
+        align-items: center;
+
+    }
+    #team{
+        display: grid;
+        margin: auto;
+        padding: auto;
+    }
+    #nav img{
+            height: 80px;
+    padding-bottom: 20px;
+    
+    }
+    .madeWithLove {
+        background: #000;
+        color: #707070;
+        text-align: center;
+        padding-top:20px;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-family:Verdana, Geneva, Tahoma, sans-serif ;
+        font-size: 10px;
+    }
+    .madeWithLove h5 a {
+        text-decoration: none;
+        color: #fff;
+    }
+}
