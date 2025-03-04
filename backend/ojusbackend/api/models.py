@@ -18,10 +18,11 @@ class StudentManager(BaseUserManager):
 class Student(AbstractBaseUser):
     moodle_id = models.CharField(max_length=20, unique=True)
     name = models.CharField(max_length=100)
-    password = models.CharField(max_length=64)  # Ensure this matches your existing SHA256 hashes
+    password = models.CharField(max_length=64)  
     dept = models.CharField(max_length=50)
     year = models.CharField(max_length=10)
-
+    email = models.EmailField(null=True, blank=True)
+    phone_no = models.CharField(max_length=15, null=True, blank=True)
     USERNAME_FIELD = 'moodle_id'
     REQUIRED_FIELDS = ['name', 'dept', 'year']
 
@@ -29,3 +30,22 @@ class Student(AbstractBaseUser):
 
     def __str__(self):
         return self.name
+    
+class Event(models.Model):
+    name = models.CharField(max_length=100)
+    date = models.DateTimeField()
+    venue = models.CharField(max_length =100)
+    time = models.CharField(max_length=25)
+    heads = models.CharField(max_length= 100)
+    phone_no = models.CharField(max_length=100)
+    category = models.CharField(max_length=25)
+    description = models.TextField()
+
+
+class EventRegistration(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    registration_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('student', 'event') 
