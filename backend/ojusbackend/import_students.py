@@ -3,10 +3,10 @@ import sqlite3
 from hashlib import sha256
 
 
-df = pd.read_csv(r"backend\students.csv", header=None, names=["moodle_id", "name", "password", "dept", "year"])
+df = pd.read_csv(".\students.csv", header=None, names=["moodle_id", "name", "password", "dept", "year"])
 
 
-conn = sqlite3.connect("backend\ojusbackend\db.sqlite3")
+conn = sqlite3.connect(".\db.sqlite3")
 cursor = conn.cursor()
 
 

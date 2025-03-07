@@ -36,12 +36,18 @@ def login(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_user_details(request):
-    user = request.user  
+    user = request.user
+    events =  EventRegistration.objects.filter(student=user).values()
+    
+    print(list(events))
     return Response({
         "moodle_id": user.moodle_id,
         "name": user.name,
         "dept": user.dept,
-        "year": user.year
+        "year": user.year,
+        "email": user.email,
+        "phone": user.phone_no,
+        "event":list(events),
     })
 
 
@@ -52,6 +58,7 @@ def register_event(request):
     student = request.user
     serializer = EventRegistrationSerializer(data=request.data)
     
+
     if not serializer.is_valid():
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
