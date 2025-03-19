@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+import random
 
 class StudentManager(BaseUserManager):
     def create_user(self, moodle_id, password=None, **extra_fields):
@@ -23,6 +24,9 @@ class Student(AbstractBaseUser):
     year = models.CharField(max_length=10)
     email = models.EmailField(null=True, blank=True)
     phone_no = models.CharField(max_length=15, null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
     USERNAME_FIELD = 'moodle_id'
     REQUIRED_FIELDS = ['name', 'dept', 'year']
 
@@ -49,3 +53,25 @@ class EventRegistration(models.Model):
 
     class Meta:
         unique_together = ('student', 'event') 
+
+
+def generate_team_id():
+    return random.randint(10000, 99999)
+
+class Team(models.Model):
+    team_name = models.CharField(max_length=255)
+    team_id = models.PositiveIntegerField(unique=True, default=generate_team_id, editable=False)
+    leader = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='led_teams')
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='teams')
+
+    def __str__(self):
+        return f"{self.team_name} ({self.team_id})"
+
+class Member(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='teams')
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='members')
+
+    def __str__(self):
+        return f"{self.moodle_id} - {self.team.team_name}"
+
+

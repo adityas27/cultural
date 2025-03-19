@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from .models import Event, EventRegistration
-from .serializers import EventRegistrationSerializer, EventSerializer
+from .serializers import EventRegistrationSerializer, EventSerializer, MemberSerializer, TeamSerializer
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -103,3 +103,25 @@ def get_event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     serializer = EventSerializer(event)
     return Response(serializer.data)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_team(request):
+    data = request.data
+    data['leader_id'] = request.user.id  # Set authenticated user as leader
+    serializer = TeamSerializer(data=data)
+    if serializer.is_valid():
+        team = serializer.save()
+        return Response({'team_id': team.team_id, 'team_name': team.team_name}, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def join_team(request):
+    data = request.data
+    data['student_id'] = request.user.id  # Set authenticated user as student
+    serializer = MemberSerializer(data=data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({'message': 'Successfully joined the team!'}, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
