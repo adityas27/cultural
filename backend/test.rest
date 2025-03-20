@@ -60,3 +60,19 @@ Content-Type: application/json
 {
     "team_id": "81345"
 }
+### Book ticket 
+PATCH http://127.0.0.1:8000/api/booking/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyNTgzMzc1LCJpYXQiOjE3NDI0OTY5NzUsImp0aSI6ImNlMWU1NWVlMjYwNTQ4MGZhMjY2Mzk1OTZjZTIyMWY0IiwidXNlcl9pZCI6MTV9.bwpEmcRu2o8hbynGQXMt9WYk4t6uvDZgyENKwQldN88
+Content-Type: application/json
+
+{
+    
+}
+### Mark attendance 
+PATCH http://127.0.0.1:8000/api/mark/100002/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyNTgzMzc1LCJpYXQiOjE3NDI0OTY5NzUsImp0aSI6ImNlMWU1NWVlMjYwNTQ4MGZhMjY2Mzk1OTZjZTIyMWY0IiwidXNlcl9pZCI6MTV9.bwpEmcRu2o8hbynGQXMt9WYk4t6uvDZgyENKwQldN88
+Content-Type: application/json
+
+{
+    
+}

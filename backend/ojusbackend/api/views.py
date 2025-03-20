@@ -125,3 +125,22 @@ def join_team(request):
         serializer.save()
         return Response({'message': 'Successfully joined the team!'}, status=status.HTTP_200_OK)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def booking_update(request):
+    if Student.objects.filter(g_reg=True).count() >= 800:
+        return Response({"message": "Booking limit reached"}, status=status.HTTP_400_BAD_REQUEST)
+    
+    student = get_object_or_404(Student, moodle_id=request.user.moodle_id)
+    student.g_reg = True
+    student.save()
+    return Response({"message": "g_reg updated successfully"}, status=status.HTTP_200_OK)
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def mark_attendance(request, moodle_id):
+    student = get_object_or_404(Student, moodle_id=moodle_id, g_reg=True)
+    student.g_att = True
+    student.save()
+    return Response({"message": "Attendance marked successfully"}, status=status.HTTP_200_OK)
