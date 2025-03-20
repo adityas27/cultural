@@ -60,7 +60,7 @@ def generate_team_id():
 
 class Team(models.Model):
     team_name = models.CharField(max_length=255)
-    team_id = models.PositiveIntegerField(unique=True, default=generate_team_id, editable=False)
+    team_id = models.PositiveIntegerField(unique=True, default=generate_team_id, editable=False, primary_key=True)
     leader = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='led_teams')
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='teams')
 

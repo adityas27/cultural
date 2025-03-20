@@ -1,13 +1,62 @@
+### Login 
 POST http://127.0.0.1:8000/api/login/
 Content-Type: application/json
 
 {
-    "moodle_id": "22107021",
-    "password": "YASH@22107021"
+    "moodle_id": "100002",
+    "password": "student1@100002"
 }
 
-###
-
-
+### User Data
 GET http://127.0.0.1:8000/api/get 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNjczMDkxLCJpYXQiOjE3NDA1ODY2OTEsImp0aSI6IjdmZWIwOGQ4ODdkZTQ0ZGZiZjNkNzVlMGEwMWY4OTZmIiwidXNlcl9pZCI6OTM1fQ.NkEhyFVRonM3sT6lFhrZ4_BYlpxh_Y23SBTAAQ2asIg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzYxODMxLCJpYXQiOjE3NDEyNzU0MzEsImp0aSI6ImZlMjdmY2Y3YzRkYjRhODRiM2Q4ZWYwZDEyMWJkZGUwIiwidXNlcl9pZCI6M30.6GeoIGbOvAfJi7AOetI39zjXCpcttA8EgdP0BGoOyIE
+
+### Registeration
+POST http://127.0.0.1:8000/api/events/register/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzYxODMxLCJpYXQiOjE3NDEyNzU0MzEsImp0aSI6ImZlMjdmY2Y3YzRkYjRhODRiM2Q4ZWYwZDEyMWJkZGUwIiwidXNlcl9pZCI6M30.6GeoIGbOvAfJi7AOetI39zjXCpcttA8EgdP0BGoOyIE
+Content-Type: application/json
+
+{
+    "event": "3",
+    "email":"user@gmail.com",
+    "phone_no":"920000000"
+}
+
+### Create Event
+POST http://127.0.0.1:8000/api/create_event/
+Content-Type: application/json
+
+
+{
+    "id": 4,
+    "name": "JUST DANCE",
+    "date": "2025-03-10T20:00:00Z",
+    "venue": "Main Stage",
+    "time": "2H",
+    "heads": "Aaryan Ghawali, Vinit Rane",
+    "phone_no": "+9183122783, +9183122784",
+    "category": "Informals",
+    "description": "Roll the can-Beer pong-Guess the props by song"
+}
+
+### Event Detail Page
+GET http://127.0.0.1:8000/api/get_event/2/
+
+### Create Team
+POST http://127.0.0.1:8000/api/create_team/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyNTgzMzc1LCJpYXQiOjE3NDI0OTY5NzUsImp0aSI6ImNlMWU1NWVlMjYwNTQ4MGZhMjY2Mzk1OTZjZTIyMWY0IiwidXNlcl9pZCI6MTV9.bwpEmcRu2o8hbynGQXMt9WYk4t6uvDZgyENKwQldN88
+Content-Type: application/json
+
+{
+    "event_id": "1",
+    "team_name": "Alpha"
+}
+
+### Join Team
+POST http://127.0.0.1:8000/api/join_team/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyNTgzMzc1LCJpYXQiOjE3NDI0OTY5NzUsImp0aSI6ImNlMWU1NWVlMjYwNTQ4MGZhMjY2Mzk1OTZjZTIyMWY0IiwidXNlcl9pZCI6MTV9.bwpEmcRu2o8hbynGQXMt9WYk4t6uvDZgyENKwQldN88
+Content-Type: application/json
+
+{
+    "team_id": "81345"
+}
